@@ -3,6 +3,7 @@
 namespace Core\Validators;
 
 use Core\Validator;
+use Throwable;
 
 class Image extends Validator
 {
@@ -24,7 +25,7 @@ class Image extends Validator
             if (empty($data[0]) || empty($data[1])) {
                 return $this->error(self::WRONG);
             }
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             return $this->error(self::WRONG);
         }
 

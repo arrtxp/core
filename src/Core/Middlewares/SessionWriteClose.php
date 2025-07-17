@@ -9,14 +9,14 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class SessionWriteClose implements MiddlewareInterface
 {
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 
-	public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
-	{
-		session_write_close();
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
+    {
+        session_write_close();
 
-		return $handler->handle($request);
-	}
+        return $handler->handle($request);
+    }
 }

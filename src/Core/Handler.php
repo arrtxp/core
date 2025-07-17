@@ -8,16 +8,17 @@ use Core\Filters\ToFloat;
 use Core\Filters\ToInt;
 use Core\Filters\ToNull;
 use Core\Filters\ToString;
-use Core\Middlewares\HandlerResult;
 use Core\Validators\ArrayLength;
 use Core\Validators\Between;
 use Core\Validators\Enum;
 use Core\Validators\StringLength;
+use DateTime;
 use Mezzio\Router\RouteResult;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use ReflectionClass;
 
 abstract class Handler implements MiddlewareInterface, ServiceConstants
 {
@@ -122,7 +123,7 @@ abstract class Handler implements MiddlewareInterface, ServiceConstants
                 }
 
                 $obj->$key = $collection;
-            } elseif ($types[$key]['name'] === \DateTime::class) {
+            } elseif ($types[$key]['name'] === DateTime::class) {
                 $obj->$key = $params[$key] ? new $types[$key]['name']($params[$key]) : null;
             } else {
                 $obj->$key = new $types[$key]['name']();
@@ -137,7 +138,7 @@ abstract class Handler implements MiddlewareInterface, ServiceConstants
 
     protected function runWhenError(ServerRequestInterface $request): ServerRequestInterface
     {
-        return $request->withAttribute(HandlerResult::HTTP_CODE, 400);
+        return $request->withAttribute(self::HTTP_CODE, 400);
     }
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
@@ -159,7 +160,7 @@ abstract class Handler implements MiddlewareInterface, ServiceConstants
     private function buildInputs(?object $object, string $method): array
     {
         $object ??= $this;
-        $reflection = new \ReflectionClass($object);
+        $reflection = new ReflectionClass($object);
         $properties = $reflection->getProperties();
 
         $inputs = [];

@@ -3,6 +3,8 @@
 namespace Core\Validators;
 
 use Core\Validator;
+use DateTime;
+use Throwable;
 
 class Date extends Validator
 {
@@ -18,13 +20,13 @@ class Date extends Validator
     ];
 
     protected string $format;
-    protected \DateTime $min;
+    protected DateTime $min;
 
     public function isValid($value): bool
     {
         try {
             $value = str_replace('T', ' ', $value);
-            $d = \DateTime::createFromFormat($this->format, $value);
+            $d = DateTime::createFromFormat($this->format, $value);
 
             if (!$d || $d->format($this->format) !== $value) {
                 return $this->error(self::INVALID, $this->format);
@@ -33,7 +35,7 @@ class Date extends Validator
             if (isset($this->min) && $this->min->getTimestamp() > $d->getTimestamp()) {
                 return $this->error(self::INVALID_MIN, $this->min->format($this->format));
             }
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             return $this->error(self::INVALID);
         }
 

@@ -6,16 +6,16 @@ use Core\Filter;
 
 class ToInt extends Filter
 {
-	public const string OPTION_ALL = 'all';
+    public const string OPTION_ALL = 'all';
 
-	protected bool $all = false;
+    protected bool $all = false;
 
-	public function filter($value): ?int
-	{
-		if (!$this->all && ($value === null || $value === '')) {
-			return null;
-		}
+    public function filter($value): ?int
+    {
+        if (!$this->all && ($value === null || $value === '')) {
+            return null;
+        }
 
-		return (int)str_replace(' ', '', $value);
-	}
+        return (int)str_replace(' ', '', $value);
+    }
 }

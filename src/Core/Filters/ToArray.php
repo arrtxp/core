@@ -6,12 +6,12 @@ use Core\Filter;
 
 class ToArray extends Filter
 {
-	public function filter($value): ?array
-	{
-		if ($value === null) {
-			return null;
-		}
+    public function filter($value): ?array
+    {
+        if ($value === null) {
+            return null;
+        }
 
-		return (array)$value;
-	}
+        return (array)$value;
+    }
 }

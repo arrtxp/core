@@ -4,6 +4,7 @@ namespace Core\Filters;
 
 use Core\Filter;
 use Core\Utils;
+use Throwable;
 
 class ToUuid extends Filter
 {
@@ -15,7 +16,7 @@ class ToUuid extends Filter
             }
 
             return Utils::uuid($value);
-		} catch (\Throwable $e) {
+        } catch (Throwable $e) {
             return $value;
         }
     }

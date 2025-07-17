@@ -7,17 +7,17 @@ use Laminas\Filter\AbstractFilter;
 
 class ToArrayInt extends Filter
 {
-	public function filter($value): ?array
-	{
-		if ($value === null) {
-			return null;
-		}
+    public function filter($value): ?array
+    {
+        if ($value === null) {
+            return null;
+        }
 
-		$value = (array)$value;
-		foreach ($value as &$item) {
-			$item = (int)$item;
-		}
+        $value = (array)$value;
+        foreach ($value as &$item) {
+            $item = (int)$item;
+        }
 
-		return $value;
-	}
+        return $value;
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace Core\Validators;
 
+use BackedEnum;
 use Core\Validator;
 
 class Enum extends Validator
@@ -28,7 +29,7 @@ class Enum extends Validator
             return true;
         }
 
-        /** @var \BackedEnum $enum */
+        /** @var BackedEnum $enum */
         $cases = $this->enumName::cases();
 
         foreach ($cases as $case) {

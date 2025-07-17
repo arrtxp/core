@@ -9,7 +9,7 @@ class ToSeoText extends Filter
     public function filter($value): string
     {
         $value = (string)$value;
-        $value = iconv('UTF-8','ASCII//TRANSLIT',$value);
+        $value = iconv('UTF-8', 'ASCII//TRANSLIT', $value);
         $value = preg_replace("/[^\w -]/ui", "", $value);
         $value = preg_replace('/\s+/', ' ', $value);
         $value = str_replace(['?', ' ', '/', ',', '&'], "-", $value);

@@ -6,7 +6,7 @@ use Core\Traits\BuildFilterOrValidator;
 
 abstract class Filter
 {
-	use BuildFilterOrValidator;
+    use BuildFilterOrValidator;
 
-	abstract public function filter(mixed $value): mixed;
+    abstract public function filter(mixed $value): mixed;
 }

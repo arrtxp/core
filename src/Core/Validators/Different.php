@@ -6,22 +6,22 @@ use Core\Validator;
 
 class Different extends Validator
 {
-	public const string SAME = 'same';
+    public const string SAME = 'same';
 
-	public const string OPTION_TOKEN = 'token';
+    public const string OPTION_TOKEN = 'token';
 
-	protected array $messages = [
-		self::SAME => 'Podana wartość jest nieprawidłowa.',
-	];
+    protected array $messages = [
+        self::SAME => 'Podana wartość jest nieprawidłowa.',
+    ];
 
-	protected string|int|float $token;
+    protected string|int|float $token;
 
-	public function isValid($value): bool
-	{
-		if ((string)$value === (string)$this->token) {
-			return $this->error(self::SAME);
-		}
+    public function isValid($value): bool
+    {
+        if ((string)$value === (string)$this->token) {
+            return $this->error(self::SAME);
+        }
 
-		return true;
-	}
+        return true;
+    }
 }

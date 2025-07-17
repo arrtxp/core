@@ -3,6 +3,7 @@
 namespace Core\Filters;
 
 use Core\Filter;
+use Transliterator;
 
 class RemoveSpecialChars extends Filter
 {
@@ -14,7 +15,7 @@ class RemoveSpecialChars extends Filter
 
         $value = (string)$value;
 
-        $tranliterator = \Transliterator::create('NFD; Remove; NFC');
+        $tranliterator = Transliterator::create('NFD; Remove; NFC');
         $value = $tranliterator->transliterate($value);
 
         return trim(strip_tags($value));

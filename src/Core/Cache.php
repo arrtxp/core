@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use Throwable;
+
 final class Cache
 {
     private static string $dirTemp;
@@ -57,7 +59,7 @@ final class Cache
     {
         try {
             return unserialize(file_get_contents($this->getPath($this->key)));
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             $this->delete();
 
             throw $e;

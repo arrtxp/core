@@ -2,6 +2,10 @@
 
 namespace Core;
 
+use Throwable;
+
+use const TIME;
+
 abstract class ServiceCache
 {
     private function getFilePathCache(string $key): string
@@ -18,7 +22,7 @@ abstract class ServiceCache
             return null;
         }
 
-        if (filemtime($path) < (\TIME - $lifetime)) {
+        if (filemtime($path) < (TIME - $lifetime)) {
             $this->removeCache($key);
 
             return null;
@@ -26,7 +30,7 @@ abstract class ServiceCache
 
         try {
             return unserialize(file_get_contents($path));
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             $this->removeCache($key);
 
             throw $e;
@@ -38,7 +42,7 @@ abstract class ServiceCache
         $parts = explode('/', $key);
         array_pop($parts);
 
-        $dir = $this->getFilePathCache(''). implode('/', $parts);
+        $dir = $this->getFilePathCache('') . implode('/', $parts);
         if (!is_dir($dir)) {
             mkdir($dir, 0755, true);
         }

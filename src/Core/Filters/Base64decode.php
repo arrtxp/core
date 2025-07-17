@@ -3,6 +3,7 @@
 namespace Core\Filters;
 
 use Core\Filter;
+use Throwable;
 
 class Base64decode extends Filter
 {
@@ -10,7 +11,7 @@ class Base64decode extends Filter
     {
         try {
             return base64_decode($value);
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             return null;
         }
     }

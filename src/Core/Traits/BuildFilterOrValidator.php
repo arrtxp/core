@@ -2,6 +2,9 @@
 
 namespace Core\Traits;
 
+use ReflectionObject;
+use ReflectionProperty;
+
 trait BuildFilterOrValidator
 {
     private array $_params;
@@ -28,8 +31,8 @@ trait BuildFilterOrValidator
     private function setDefaultParams(): void
     {
         $class = get_class($this);
-        $properties = (new \ReflectionObject($this))
-            ->getProperties(\ReflectionProperty::IS_PROTECTED);
+        $properties = (new ReflectionObject($this))
+            ->getProperties(ReflectionProperty::IS_PROTECTED);
 
         $this->_params = [];
 
