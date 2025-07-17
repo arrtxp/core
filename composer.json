@@ -15,9 +15,9 @@
   ],
   "require": {
     "php": "~8.3.0 || ~8.4",
-    "laminas/laminas-servicemanager": "^3.4",
-    "laminas/laminas-diactoros": "^3.6",
-    "mezzio/mezzio-fastroute": "^3.13",
+    "laminas/laminas-servicemanager": "^3.22",
+    "laminas/laminas-diactoros": "^3.5",
+    "mezzio/mezzio-fastroute": "^3.11",
     "container-interop/container-interop": "^1.2",
     "ramsey/uuid": "^4.9",
     "laminas/laminas-recaptcha": "^3.8"
