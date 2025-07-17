@@ -42,9 +42,4 @@ abstract class Validator
     {
         return $this->errors;
     }
-
-    public function uuid(null|string|array $uuid = null, bool $toString = false): string|array
-    {
-        return Utils::uuid($uuid, $toString);
-    }
 }

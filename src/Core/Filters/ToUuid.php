@@ -3,8 +3,8 @@
 namespace Core\Filters;
 
 use Core\Filter;
-use Core\Utils;
 use Throwable;
+use Ramsey\Uuid\Uuid;
 
 class ToUuid extends Filter
 {
@@ -15,7 +15,7 @@ class ToUuid extends Filter
                 $value = substr($value, 2);
             }
 
-            return Utils::uuid($value);
+            return Uuid::fromString($value)->toString();
         } catch (Throwable $e) {
             return $value;
         }

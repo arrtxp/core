@@ -3,7 +3,7 @@
 namespace Core\Validators;
 
 use Core\Validator;
-use Laminas\ReCaptcha\ReCaptcha as LamReCaptcha;
+use Laminas\ReCaptcha\ReCaptcha as LaminasReCaptcha;
 
 class ReCaptcha extends Validator
 {
@@ -28,7 +28,7 @@ class ReCaptcha extends Validator
             return $this->error(self::INVALID);
         }
 
-        $reCaptcha = new LamReCaptcha($this->siteKey, $this->secretKey);
+        $reCaptcha = new LaminasReCaptcha($this->siteKey, $this->secretKey);
         $result = $reCaptcha->verify($value);
 
         if (!$result->isValid()) {

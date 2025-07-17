@@ -3,7 +3,6 @@
 namespace Core\Filters;
 
 use Core\Filter;
-use Laminas\Filter\AbstractFilter;
 
 class ToBool extends Filter
 {

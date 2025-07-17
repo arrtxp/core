@@ -18,7 +18,9 @@
     "laminas/laminas-servicemanager": "^4.4",
     "laminas/laminas-diactoros": "^3.6",
     "mezzio/mezzio-fastroute": "^3.13",
-    "container-interop/container-interop": "^1.2"
+    "container-interop/container-interop": "^1.2",
+    "ramsey/uuid": "^4.9",
+    "laminas/laminas-recaptcha": "^3.8"
   },
   "autoload": {
     "psr-4": {

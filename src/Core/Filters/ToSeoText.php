@@ -13,7 +13,7 @@ class ToSeoText extends Filter
         $value = preg_replace("/[^\w -]/ui", "", $value);
         $value = preg_replace('/\s+/', ' ', $value);
         $value = str_replace(['?', ' ', '/', ',', '&'], "-", $value);
-        $value = preg_replace('/\-+/', '-', $value);
+        $value = preg_replace('/-+/', '-', $value);
 
         return trim(strtolower($value));
     }

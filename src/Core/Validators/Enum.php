@@ -9,14 +9,15 @@ class Enum extends Validator
 {
     public const string INVALID = 'invalid';
 
-    public const string OPTION_ENUM_NAME = 'enumName';
+    public const string OPTION_ENUM= 'enum';
     public const string OPTION_ALLOW_EMPTY = 'allowEmpty';
 
     protected array $messages = [
         self::INVALID => 'Podaj poprawną wartość.',
     ];
 
-    protected string $enumName;
+    /** @var BackedEnum $enum */
+    protected string $enum;
     protected bool $allowEmpty = false;
 
     public function isValid($value): bool
@@ -29,8 +30,7 @@ class Enum extends Validator
             return true;
         }
 
-        /** @var BackedEnum $enum */
-        $cases = $this->enumName::cases();
+        $cases = $this->enum::cases();
 
         foreach ($cases as $case) {
             if ($value === $case->value) {

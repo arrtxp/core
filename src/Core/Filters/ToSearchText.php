@@ -12,6 +12,6 @@ class ToSearchText extends Filter
 
     public function filter($value): ?string
     {
-        return trim(preg_replace("/[^\w \.\-{$this->append}]/ui", "", $value));
+        return trim(preg_replace("/[^\w .\-{$this->append}]/ui", "", $value));
     }
 }
