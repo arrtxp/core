@@ -1,8 +1,8 @@
 <?php
 
-namespace Core\Factories;
+namespace Arrtxp\Core\Factories;
 
-use Core\InputFilters;
+use Arrtxp\Core\InputFilters;
 use Interop\Container\Containerinterface;
 
 class InputFiltersFactory

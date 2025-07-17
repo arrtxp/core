@@ -1,8 +1,8 @@
 <?php
 
-namespace Core\Filters;
+namespace Arrtxp\Core\Filters;
 
-use Core\Filter;
+use Arrtxp\Core\Filter;
 
 class ToNull extends Filter
 {

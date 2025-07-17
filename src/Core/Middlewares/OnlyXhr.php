@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Middlewares;
+namespace Arrtxp\Core\Middlewares;
 
 use Laminas\Diactoros\Response\EmptyResponse;
 use Psr\Http\Message\ResponseInterface;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Core\Validators;
+namespace Arrtxp\Core\Validators;
 
-use Core\Validator;
+use Arrtxp\Core\Validator;
 
 class Different extends Validator
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Core\Validators;
+namespace Arrtxp\Core\Validators;
 
 use BackedEnum;
-use Core\Validator;
+use Arrtxp\Core\Validator;
 
 class Enum extends Validator
 {

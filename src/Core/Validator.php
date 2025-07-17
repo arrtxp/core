@@ -1,8 +1,8 @@
 <?php
 
-namespace Core;
+namespace Arrtxp\Core;
 
-use Core\Traits\BuildFilterOrValidator;
+use Arrtxp\Core\Traits\BuildFilterOrValidator;
 
 abstract class Validator
 {

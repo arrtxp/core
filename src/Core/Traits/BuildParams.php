@@ -1,8 +1,8 @@
 <?php
 
-namespace Core\Traits;
+namespace Arrtxp\Core\Traits;
 
-use Core\ServiceConstants;
+use Arrtxp\Core\ServiceConstants;
 use Mezzio\Router\RouteResult;
 use Psr\Http\Message\ServerRequestInterface;
 

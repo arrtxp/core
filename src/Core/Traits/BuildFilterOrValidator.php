@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Traits;
+namespace Arrtxp\Core\Traits;
 
 use ReflectionObject;
 use ReflectionProperty;

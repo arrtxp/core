@@ -1,17 +1,17 @@
 <?php
 
-namespace Core;
+namespace Arrtxp\Core;
 
-use Core\Filters\ToArray;
-use Core\Filters\ToBool;
-use Core\Filters\ToFloat;
-use Core\Filters\ToInt;
-use Core\Filters\ToNull;
-use Core\Filters\ToString;
-use Core\Validators\ArrayLength;
-use Core\Validators\Between;
-use Core\Validators\Enum;
-use Core\Validators\StringLength;
+use Arrtxp\Core\Filters\ToArray;
+use Arrtxp\Core\Filters\ToBool;
+use Arrtxp\Core\Filters\ToFloat;
+use Arrtxp\Core\Filters\ToInt;
+use Arrtxp\Core\Filters\ToNull;
+use Arrtxp\Core\Filters\ToString;
+use Arrtxp\Core\Validators\ArrayLength;
+use Arrtxp\Core\Validators\Between;
+use Arrtxp\Core\Validators\Enum;
+use Arrtxp\Core\Validators\StringLength;
 use DateTime;
 use Mezzio\Router\RouteResult;
 use Psr\Http\Message\ResponseInterface;

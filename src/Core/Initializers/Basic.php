@@ -1,9 +1,9 @@
 <?php
 
-namespace Core\Initializers;
+namespace Arrtxp\Core\Initializers;
 
-use Core\Handler;
-use Core\InputFilters;
+use Arrtxp\Core\Handler;
+use Arrtxp\Core\InputFilters;
 use Interop\Container\ContainerInterface;
 use Psr\Container\ContainerInterface as PsrContainerInterface;
 use Laminas\ServiceManager\Initializer\InitializerInterface;
