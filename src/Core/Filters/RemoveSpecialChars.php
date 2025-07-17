@@ -1,0 +1,22 @@
+<?php
+
+namespace Core\Filters;
+
+use Core\Filter;
+
+class RemoveSpecialChars extends Filter
+{
+    public function filter($value): ?string
+    {
+        if ($value === null) {
+            return null;
+        }
+
+        $value = (string)$value;
+
+        $tranliterator = \Transliterator::create('NFD; Remove; NFC');
+        $value = $tranliterator->transliterate($value);
+
+        return trim(strip_tags($value));
+    }
+}
