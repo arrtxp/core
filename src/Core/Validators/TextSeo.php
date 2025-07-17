@@ -16,7 +16,7 @@ class TextSeo extends Validator
     {
         $value = (string)$value;
 
-        if (!preg_match('/^([\w\d \-–\'\.\,\?\!\:\(\)&])+$/ui', $value)) {
+        if (!preg_match('/^([\w\d \-–\'.,?!:()&])+$/ui', $value)) {
             return $this->error(self::INVALID);
         }
 

@@ -276,7 +276,7 @@ abstract class Handler implements MiddlewareInterface, ServiceConstants
                                     $inputs[$name][self::VALIDATORS][Enum::class] = [
                                         self::NAME => Enum::class,
                                         self::OPTIONS => [
-                                            Enum::OPTION_ENUM_NAME => $type,
+                                            Enum::OPTION_ENUM => $type,
                                         ],
                                     ];
 
